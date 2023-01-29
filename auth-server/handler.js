@@ -87,6 +87,9 @@ module.exports.getAccessToken = async (event) => { //a new Lambda function
       // Respond with OAuth token 
       return {
         statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(token),
       };
     })
