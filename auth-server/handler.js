@@ -98,6 +98,9 @@ module.exports.getAccessToken = async (event) => { //a new Lambda function
       console.error(err);
       return {
         statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(err),
       };
     });
