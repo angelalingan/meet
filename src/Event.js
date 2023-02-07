@@ -16,7 +16,7 @@ class Event extends Component {
         return (
             <div>
                 <h1 className="summary">{event.summary}</h1>
-                <p className="event-start">{event.start.dateTime}</p>
+                <p className="event-start">{new Date(event.start.dateTime).toString()}</p>
                 <p className="event-location">{`@${event.summary} | ${event.location}`}</p>
                 {!collapsed && (
                     <div className='event-details'>
